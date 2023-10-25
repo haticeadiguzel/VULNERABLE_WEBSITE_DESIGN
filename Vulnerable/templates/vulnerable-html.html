@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Vulnerable Website</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #f2f2f2;
+            color: black;
+            text-align: center;
+            padding: 10px;
+        }
+
+        form {
+            background-color: white;
+            width: 50%;
+            margin: 0 auto;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+        }
+
+        label {
+            display: block;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+
+        input[type="text"] {
+            width: 94%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+        }
+
+        input[type="submit"] {
+            background-color: #3498db;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        div {
+            background-color: white;
+            width: 50%;
+            margin: 0 auto;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+        }
+
+        p {
+            text-align: left;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Vulnerable Website</h1>
+    </header>
+    <form method="POST">
+        <label for="param1">XSS:</label>
+        <input type="text" name="param1" id="param1" placeholder="Enter an HTML command"><br>
+
+        <label for="param2">SQL:</label>
+        <input type="text" name="param2" id="param2" placeholder="Enter an SQL command"><br>
+
+        <label for="param3">Command:</label>
+        <input type="text" name="param3" id="param3" placeholder="Enter an subprocess Command"><br>
+
+        <input type="submit" value="Submit">
+    </form>
+    <br>
+    <div>
+        {% if result %}
+            <p>{{ result | safe }}</p>
+        {% endif %}
+    </div>
+
+    
+</body>
+</html>
