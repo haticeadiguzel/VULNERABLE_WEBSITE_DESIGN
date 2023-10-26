@@ -40,7 +40,7 @@ def sql_function(param2):
 def command_function(param3):
     try:
         cmd = ['ping', '-c', '1', param3]
-        result = subprocess.check_output(cmd, shell=False).decode("utf-8")
+        result = subprocess.check_output(cmd, shell=False).decode("utf-8") #Dogrudan isletim sistemi uzerinde calistiriliyor
         return result
     except Exception as e:
         return "Ping is not success: " + param3
